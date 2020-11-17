@@ -1,0 +1,39 @@
+
+.userView{
+        font-size: 14px;
+        font-weight: 700;
+        color: dimgrey;
+    }
+.tab-view{
+
+    padding: 2%;
+    text-align: center;
+    font-weight: 700;
+}
+.homepage-view{
+    margin-top: 4%;
+    padding: 1%;
+}
+.name{
+    font-size: 18px;
+        font-weight: 700;
+        color: black;
+}
+.nameDetails{
+    font-weight: 500;
+    margin-bottom: 8%;
+}
+.selectedClass{
+    border: none;
+    border-bottom: 2px solid #f9826c;
+}
+
+.text-desc{
+font-size: 12px;
+}
+.additional-Box{
+    border: none;
+    border-top: gray solid 2px;
+    padding: 4% 0% 0% 8%;
+    margin-top: 2%;
+}

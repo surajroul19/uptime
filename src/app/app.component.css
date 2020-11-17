@@ -1,0 +1,27 @@
+.box{
+    border: 2px solid black;
+    height: 40px;
+}
+.nav-bar{
+    background-color: #24292e;
+    color: white;
+    height: 5%;
+    
+}
+.tabView{
+    padding: 1% 1% 1.5% 1%;
+    font-weight: 600;
+}
+.tabViewIn{
+    padding: 1%;
+}
+.tabView:hover{
+    background-color: white;
+    color: #24292e;
+    border: 1px solid  #24292e;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.icons-position{
+    padding: 0.5% 0% 0% 0%;
+}

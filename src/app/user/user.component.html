@@ -1,0 +1,151 @@
+<div class="row">
+    <div class="col-sm-12 homepage-view">
+        <div class="row">
+            <div class="col-sm-2 offset-1 userView">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="box" style="border-radius: 50%;width: 175px;height: 175px;">
+                            <div *ngIf="userImage">
+                                <img src={{userImage}} alt="Not Available"
+                                    style="border-radius: 50%;width: 175px;height: 175px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12" *ngIf="userDetails">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <p class="name col-sm-12">{{userDetails.name}}</p>
+                                <p class="nameDetails col-sm-12  text-desc">{{userDetails.login}}</p>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <p class="col-sm-12 text-desc" style="color: black;">
+                                    {{userDetails.bio}}
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <button class="btn btn-outline-secondary btn-sm"> follow</button>
+
+                                </div>
+                                <div class="col-sm-8">
+                                    <button class="btn btn-outline-secondary btn-sm"><i class="fa fa-heart"></i>
+                                        Sponser</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-sm-12" style="margin-bottom: 8%;">
+                            <div class="row">
+                                <div class="col-sm-7">
+                                    <i class="fa fa-users"></i>
+                                    <span style="color: black;font-size: 11px;"> {{userDetails.followers}}</span>
+                                    <span class="text-desc" style="font-size:10px;">Followers</span>
+                                </div>
+                                <div class="col-sm-5">
+                                    <span style="color: black;font-size: 11px;">{{userDetails.following}}</span>
+                                    <span class="text-desc" style="font-size:10px;">Following</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-sm-12">
+                            <p class="text-desc"><i class="fa fa-building-o"></i> {{userDetails.company}}</p>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="text-desc"> <i class="fa fa-map-marker"></i> {{userDetails.location}}</p>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="text-desc"> Email</p>
+                        </div>
+                        <hr>
+                    </div>
+
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12 additional-Box">
+                            <div class="row">
+                                Highlight
+                            </div>
+                            <div class="row">
+                                <p class="text-desc">Code vault contributor</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-sm-12 additional-Box">
+                            <div class="row">
+                                Organization
+                            </div>
+                            <div class="row">
+                                <p class="text-desc"><i class="fa fa-address-card fa-2x"></i></p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col-sm-12 additional-Box">
+                            <div class="row">
+                                Sponser
+                            </div>
+                            <div class="row">
+                                <p class="text-desc"><i class="fa fa-user-circle-o fa-3x"></i></p> &nbsp;
+                                <p class="text-desc"><i class="fa fa-user-circle-o fa-3x"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-2 tab-view" (click)="changeTab('1')"
+                        [ngClass]="{'selectedClass':selectedTab=='1'}">
+                        OverView
+                    </div>
+                    <div class="col-sm-2 tab-view" (click)="changeTab('2')"
+                        [ngClass]="{'selectedClass':selectedTab=='2'}">
+                        Projects
+                    </div>
+                    <div class="col-sm-2 tab-view" (click)="changeTab('3')"
+                        [ngClass]="{'selectedClass':selectedTab=='3'}">
+                        Repositories
+                    </div>
+                    <div class="col-sm-2 tab-view" (click)="changeTab('4')"
+                        [ngClass]="{'selectedClass':selectedTab=='4'}">
+                        Package
+                    </div>
+                </div>
+                <hr>
+                <app-overview *ngIf="selectedTab=='1'" [listOfRepositories]="repositoryDetails"></app-overview>
+                <app-projects *ngIf="selectedTab=='2'" [listOfRepositories]="repositoryDetails"></app-projects>
+                <app-repositories *ngIf="selectedTab=='3'" [listOfRepositories]="allProjects"></app-repositories>
+                <app-packages *ngIf="selectedTab=='4'"></app-packages>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

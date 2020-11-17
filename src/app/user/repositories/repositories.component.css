@@ -1,0 +1,18 @@
+.listView{
+    border: 1px solid gray;
+    height: auto;
+    border-radius: 3px;
+    margin: 1%;
+    padding-bottom: 2%;
+    min-height: 126px;
+}
+
+.titleClass {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0366d6;
+}
+.description{
+    font-size: 13px;
+    width: 90%;
+}

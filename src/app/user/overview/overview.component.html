@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row" *ngIf="listOfRepositories">
+            <div class="col-sm-12">
+                <p style="font-size: 17px;font-weight: 700;">
+                    Popular Repositories
+                </p>
+            </div>
+
+            <div *ngFor="let item of requiredLIstOfProjects" class="col-sm-6">
+                <div class="listView">
+                    <div class="row">
+                        <div class="offset-1">
+                            <p class="titleClass">{{item.name}}</p>
+                            <p class="description">{{item.description}}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="font-size: 13px;">
+                        <div class="offset-1">
+                            <span>{{item.language}}</span> &nbsp;
+                            <span><i class="fa fa-star-o"></i> &nbsp;{{item.watchers_count}}</span>&nbsp; &nbsp;
+                            <span><i class="fa fa-code-fork"></i>&nbsp;{{item.forks}}</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row" style="margin-top:2%">
+            <div class="col-sm-12">
+                <p style="font-size: 17px;font-weight: 700;">
+                    649 contribution
+                </p>
+            </div>
+            <div class="col-sm-12 listView">
+                <calendar-heatmap [data]="null" [overview]="1" style="width:20px;" (handler)="print($event)">
+                </calendar-heatmap>
+            </div>
+
+        </div>
+
+        <div class="row" style="margin-top:2%">
+            <div class="col-sm-10">
+                <p style="font-size: 17px;font-weight: 700;">
+                    Contribution Activity
+                </p>
+                <div>
+                    <ul class="timeline">
+                        <li>
+                            <a>New Web Design</a>
+                            <a class="float-right">21 March, {{selectedYear}}</a>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non
+                                nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis
+                                sagittis ligula in sodales vehicula....</p>
+                        </li>
+                        <li>
+                            <a>21 Projects</a>
+                            <a class="float-right">4 March, {{selectedYear}}</a>
+                            <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque
+                                felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
+                        </li>
+                        <li>
+                            <a>Awesome Projects</a>
+                            <a class="float-right">1 April, {{selectedYear}}</a>
+                            <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae
+                                nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <button class="btn btn-outline-secondary" style="width: 100%;">show more activity</button>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div *ngFor="let year of Years">
+                    <div class="row">
+                        <div class="col-sm-12" style="margin-top: 1%;">
+                            <button
+                                [ngClass]=" {'btn':true,'btn-info':selectedYear==year ,'btn-normal':selectedYear!=year}"
+                                (click)="selectyear(year)">{{year}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

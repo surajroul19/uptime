@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row" *ngIf="listOfRepositories">
+            <div class="col-sm-12">
+                <p style="font-size: 17px;font-weight: 700;">
+                    Available projects in repositories
+                </p>
+            </div>
+
+            <div *ngFor="let item of listOfRepositories" class="col-sm-6">
+                <div class="listView">
+                    <div class="row">
+                        <div class="offset-1">
+                            <p class="titleClass">{{item.name}}</p>
+                            <p class="description">{{item.description}}</p>
+                        </div>
+
+                    </div>
+
+                    <div class="row" style="font-size: 13px;">
+                        <div class="offset-1">
+                            <span>{{item.language}}</span> &nbsp;
+                            <span>{{item.forks}}</span> &nbsp;
+                            <span>{{item.watchers_count}}</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
